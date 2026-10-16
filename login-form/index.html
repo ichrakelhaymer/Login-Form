@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Neumorphic Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="login form.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="flip-scene" id="flipScene">
+        <div class="flip-card">
+
+            <!-- FRONT — LOGIN -->
+            <div class="glass-circle front">
+                <div class="accent-ring"></div>
+
+                <form class="login-form">
+                    <h1>Login</h1>
+                    <div class="subtitle">Sign in to your account</div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" autocomplete="off">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" autocomplete="off">
+                    </div>
+
+                    <div class="forgot">
+                        <div class="remember">
+                            <div class="switch" id="rememberSwitch"></div>
+                            Remember me
+                        </div>
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="button">Sign In</button>
+
+                    <div class="signup-text">Don't have an account? <a id="toSignup">Sign up</a></div>
+                </form>
+            </div>
+
+            <!-- BACK — SIGN UP -->
+            <div class="glass-circle back">
+                <div class="accent-ring"></div>
+
+                <form class="login-form">
+                    <h1>Sign Up</h1>
+                    <div class="subtitle">Create your account</div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Full name" autocomplete="off">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" autocomplete="off">
+                    </div>
+
+                    <div class="input-box" style="margin-bottom: 30px;">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" autocomplete="off">
+                    </div>
+
+                    <button type="button">Create Account</button>
+
+                    <div class="signup-text">Already have an account? <a id="toLogin">Login</a></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('rememberSwitch').addEventListener('click', function () {
+        this.classList.toggle('on');
+    });
+
+    const scene = document.getElementById('flipScene');
+    document.getElementById('toSignup').addEventListener('click', function () {
+        scene.classList.add('flipped');
+    });
+    document.getElementById('toLogin').addEventListener('click', function () {
+        scene.classList.remove('flipped');
+    });
+</script>
+
+</body>
+</html>
